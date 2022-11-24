@@ -1,0 +1,428 @@
+$main-color: #2f1893;
+$text-color: #ffffff;
+$secondary-color: rgba(255, 255, 255, 0.7);
+$third-color: rgba(255, 255, 255, 0.301);
+
+$font-logo: "Poppins", sans-serif;
+$font-main: "DM Sans", sans-serif;
+$font-links: "Nunito Sans", sans-serif;
+
+//RESET
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+body {
+  background-color: $main-color;
+}
+
+.main-container {
+  padding: 0 10px;
+  margin: 20px auto; //!!!Cange in media
+  max-width: 1170px;
+
+  //HEADER STYLING
+
+  .header-container {
+    // HERE BURGER SIDEBAR BORDER
+    .menu {
+      display: flex;
+      align-items: center;
+
+      font: {
+        family: $font-main;
+        weight: 400;
+      }
+
+      @media (max-width: 1083px) {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+
+        li {
+          padding: 0 0.5rem;
+
+          a {
+            color: $secondary-color;
+            font-family: $font-main;
+            transition: 0.3s;
+            &:hover {
+              color: $text-color;
+            }
+            i {
+              padding-left: 8px;
+            }
+          }
+        }
+      }
+
+      a {
+        color: $text-color;
+        font-family: $font-links;
+        padding: 0 0.7rem;
+      }
+
+      .menu-faq {
+        letter-spacing: -0.2px;
+      }
+
+      .menu-contact {
+        border: 2px solid $third-color;
+        border-radius: 100px;
+        padding: 9px 23px;
+        margin: 0 38px;
+        transition: 0.3s;
+        &:hover {
+          background-color: $third-color;
+        }
+      }
+    }
+
+    .menu-burger {
+      float: right;
+      position: absolute;
+      top: 33px;
+      right: 20px;
+      div {
+        @media (max-width: 1083px) {
+          float: rigth;
+          width: 24px;
+          height: 2px;
+          background-color: $text-color;
+          margin-bottom: 4px;
+          cursor: pointer;
+        }
+      }
+    }
+    // SIDEBAR
+    .menu-sidebar {
+      display: none;
+    }
+    @extend .menu-sidebar;
+    @media (max-width: 1083px) {
+      .active-sidebar {
+        min-width: 25%;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        display: block;
+
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: $main-color;
+        .sidebar-wrapper {
+          padding: 0 20px;
+          // height: 100vh;
+          .menu-contact-sidebar {
+            border: 2px solid $third-color;
+            border-radius: 100px;
+            padding: 9px 40px;
+            transition: 0.3s;
+            &:hover {
+              background-color: $third-color;
+            }
+          }
+        }
+        ul {
+          li {
+            font-size: 20px;
+
+            a {
+              color: $text-color;
+              font-family: $font-main;
+              i {
+                display: none;
+              }
+            }
+          }
+        }
+        a {
+          padding: 9px 10px;
+          // margin: 0 20px;
+          display: block;
+          color: $text-color;
+          font-family: $font-main;
+          font-size: 20px;
+        }
+      }
+    }
+    .border {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $third-color;
+    }
+  }
+  width: 100%;
+
+  header {
+    padding-bottom: 34px;
+    color: $text-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: 24px;
+      font: {
+        family: $font-logo;
+        weight: 700;
+      }
+    }
+  }
+
+  //DROPDOWN MENU
+
+  .dropdown {
+    visibility: hidden;
+    display: none;
+    color: $text-color;
+    justify-content: space-between;
+    font-family: $font-main;
+
+    @media (max-width: 1083px) {
+      display: none;
+      visibility: hidden;
+    }
+
+    .dropdown-first-column {
+      background-color: $main-color;
+      z-index: 100;
+      color: $secondary-color;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 28px;
+      p {
+        margin: 0 0 0.1rem 0;
+        padding: 4px 10px;
+        width: fit-content;
+        cursor: pointer;
+        &:hover {
+          color: $main-color;
+          background: $third-color;
+          border-radius: 10px;
+        }
+      }
+
+      .dropdown-first-column__title {
+        color: $text-color;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+
+    .dropdown-second-column {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      .dropdown-second-column-first-row {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      .dropdown-second-column-second-row {
+        p {
+          padding: 28px 0 6px 2px;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+  .active {
+    @extend .dropdown;
+    height: auto;
+    z-index: 21;
+    visibility: visible;
+    display: flex;
+    padding: 0 100px 20px 100px;
+    margin: 20px auto;
+    background-color: $main-color;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    @media (max-width: 1083px) {
+      visibility: hidden;
+      display: none;
+    }
+  }
+  // HERO CONTAINER
+}
+.hero-container {
+  // width: 100vw;
+  background-color: $text-color;
+  padding: 70px 48px;
+  font-family: $font-main;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 94px;
+  @media (max-width: 970px) {
+    flex-direction: column;
+    img {
+      width: 70%;
+    }
+  }
+  .hero-left {
+    max-width: 469px;
+    h3 {
+      margin-bottom: 37px;
+      font-weight: 700;
+      font-size: 58px;
+      line-height: 70px;
+      color: #1e0e62;
+      letter-spacing: -1px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 32px;
+      color: rgba(21, 20, 57, 0.4);
+      margin-bottom: 94px;
+    }
+
+    a {
+      background: #482be7;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      color: #ffffff;
+      padding: 17px 40px;
+    }
+  }
+}
+
+// CALL TO ACTION
+
+.call-to-action {
+  background-image: url("RectangleHero.png");
+  background-size: cover;
+  padding: 100px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-main;
+  color: $text-color;
+
+  h3 {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 14px;
+    letter-spacing: -0.4px;
+  }
+
+  p {
+    margin-bottom: 39px;
+  }
+
+  input {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: $text-color;
+    line-height: 26px;
+    padding: 12px 24px;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid $third-color;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $third-color;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    background: #25dac5;
+    border-radius: 100px;
+    border: none;
+    padding: 12px 28px;
+    color: $text-color;
+  }
+
+  .call-to-action-left {
+    margin-right: 50px;
+  }
+  .call-to-action-right {
+    margin-right: 10px;
+    img {
+      width: 80%;
+    }
+    @media (max-width: 980px) {
+      display: none;
+    }
+  }
+}
+
+.footer-wrapper {
+  padding: 45px 0;
+  width: 100%;
+  color: $text-color;
+  font-family: $font-main;
+  .footer-wr {
+    margin: 0 auto;
+    max-width: 1170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .footer-links {
+      @media (max-width: 882px) {
+        display: none;
+      }
+    }
+  }
+
+  .footer-logo {
+    font-family: $font-logo;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  a {
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .fa-facebook-f {
+    padding: 12px 13px;
+  }
+  i {
+    text-align: center;
+    color: $text-color;
+    border: 1px solid $third-color;
+    border-radius: 100px;
+    padding: 12px 10px;
+  }
+}
