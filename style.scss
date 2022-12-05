@@ -1,0 +1,215 @@
+@use "_header.scss";
+
+$main-color: #2f1893;
+$text-color: #ffffff;
+$secondary-color: rgba(255, 255, 255, 0.7);
+$third-color: rgba(255, 255, 255, 0.301);
+
+$font-logo: "Poppins", sans-serif;
+$font-main: "DM Sans", sans-serif;
+$font-links: "Nunito Sans", sans-serif;
+
+//RESET
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+
+
+.hero-container {
+  background-color: $text-color;
+  padding: 70px 48px;
+
+  font-family: $font-main;
+  // width: 100%;
+  display: flex;
+  margin: 40px auto;
+  justify-content: center;
+  align-items: center;
+  gap: 94px;
+  @media (max-width: 970px) {
+    flex-direction: column;
+    img {
+      width: 70%;
+    }
+  }
+
+  .hero-left {
+    max-width: 469px;
+    h3 {
+      margin-bottom: 37px;
+      font-weight: 700;
+      font-size: 58px;
+      line-height: 70px;
+      color: #1e0e62;
+      letter-spacing: -1px;
+      @media (max-width: 4308px) {
+        font-size: 45px;
+      }
+    }
+    p {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 32px;
+      color: rgba(21, 20, 57, 0.4);
+      margin-bottom: 94px;
+      @media (max-width: 4308px) {
+        font-size: 16px;
+      }
+    }
+
+    a {
+      background: #482be7;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      color: #ffffff;
+      padding: 17px 40px;
+      @media (max-width: 400px) {
+        font-size: 12px;
+        padding: 16px 19px;
+      }
+    }
+  }
+}
+
+// CALL TO ACTION
+
+.call-to-action {
+  background-color: $main-color;
+  background-image: url("images/RectangleHero.png");
+  background-size: cover;
+  padding: 100px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-main;
+  color: $text-color;
+
+  h3 {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 14px;
+    letter-spacing: -0.4px;
+  }
+
+  p {
+    margin-bottom: 39px;
+  }
+
+  input {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: $text-color;
+    line-height: 26px;
+    padding: 12px 24px;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid $third-color;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $third-color;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    background: #25dac5;
+    border-radius: 100px;
+    border: none;
+    padding: 12px 28px;
+    color: $text-color;
+  }
+
+  .call-to-action-left {
+    margin-right: 50px;
+    @media (max-width: 300px) {
+      margin: 10px;
+    }
+  }
+  .call-to-action-right {
+    position: relative;
+    margin-right: 10px;
+    overflow: hidden;
+    img {
+      width: 80%;
+      z-index: 32;
+      position: inherit;
+    }
+   
+    @media (max-width: 980px) {
+      display: none;
+    }
+  }
+}
+
+.footer-wrapper {
+  background-color: $main-color;
+  padding: 45px 0;
+  width: 100%;
+  color: $text-color;
+  font-family: $font-main;
+  .footer-wr {
+    margin: 0 auto;
+    max-width: 1170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .footer-links {
+      @media (max-width: 882px) {
+        display: none;
+      }
+    }
+  }
+
+  .footer-logo {
+    font-family: $font-logo;
+    font-weight: 700;
+    font-size: 24px;
+    @media (max-width: 320px) {
+     font-size: 14px;
+    }
+  }
+
+  a {
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .fa-facebook-f {
+    padding: 12px 13px;
+  }
+  i {
+    text-align: center;
+    color: $text-color;
+    border: 1px solid $third-color;
+    border-radius: 100px;
+    padding: 12px 10px;
+     @media (max-width: 320px) {
+     font-size: 14px;
+    }
+  }
+}
