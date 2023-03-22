@@ -8,4 +8,5 @@ hero 19
 contents 18
 call to action 27
 footer 8
+Ссылка на сайт на GithubPages:
 https://elenadonova.github.io/Startup-Project/
