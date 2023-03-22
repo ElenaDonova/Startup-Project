@@ -1,6 +1,6 @@
 # Startup-Project
-Startup project with sass
-responsive, with animation (sidebar burger turns to cross), with js( dropdown menu and moving img gallery)/
+Проект с использованием sass
+responsive, агимация (в мобильной версии бургер трансформируется в крестик при нажатии), с JavaScript( выпадающее меню и раскрывающийся список)/
 Ссылка на дизайн https://www.figma.com/file/7l1Ar0sPDERTOqMYBqElAp/Landing-Page---Startup-App?t=ZTn5K8po2NBZgib0-0
 использовались:
 navigation 17
